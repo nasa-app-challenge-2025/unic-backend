@@ -79,7 +79,7 @@ class PersonaScoreService {
             val worst = weighted.maxOrNull() ?: 0.0
             val mean = if(weights.sum() > 0) weighted.sum() / weights.sum() else 0.0
             val S = alpha * worst + (1-alpha) * mean
-            val adjustedS = (S * activityMult * contextMult).coerceIn(0.0,100.0)g
+            val adjustedS = (S * activityMult * contextMult).coerceIn(0.0,100.0)
 
             var score = String.format("%.1f", adjustedS).toDouble()
 
